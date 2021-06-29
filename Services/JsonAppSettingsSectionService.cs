@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AppSettingParametersIntegrator.Services
 {
-    public class JsonSectionService : IJsonSectionService
+    public class JsonAppSettingsSectionService : IJsonSectionService
     {
         public bool EditSection(JObject json, string sectionName, string replaceSectionName, List<JToken> newValues)
         {

@@ -1,6 +1,6 @@
 ﻿namespace AppSettingParametersIntegrator.Services
 {
-    public interface IAppSettingsParamIntegratorService
+    public interface IParamIntegratorService
     {
         void ProcessDirectory(string folder, string replaceSectionName);
     }

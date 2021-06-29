@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AppSettingParametersIntegrator.Services
 {
-    public class AppSettingsParamIntegratorService : IAppSettingsParamIntegratorService
+    public class AppSettingsParamIntegratorService : IParamIntegratorService
     {
         private readonly IFileSearcherService _fileSearcherService;
         private readonly IJsonSectionService _jsonSectionService;
@@ -49,6 +49,10 @@ namespace AppSettingParametersIntegrator.Services
                     fileJObject.WriteTo(jsonWriter);
                     string indentType = shouldUseSpaces ? "spaces" : "tabs";
                     Console.WriteLine($"{filePath} - proccessed, formatted using {indentType}");
+                }
+                else
+                {
+                    Console.WriteLine($"{filePath} - ignored");
                 }
             }
         }
