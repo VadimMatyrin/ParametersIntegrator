@@ -38,26 +38,31 @@ namespace ParametersIntegrator.Services
             {
                 if (replaceSectionName != null)
                 {
-                    var sectionsToReplace = jSection["value"].Children().Where(c => c["name"].Value<string>().Contains(replaceSectionName)).ToList();
-                    foreach (var serilogValue in sectionsToReplace)
+                    var childTokens = jSection["value"].Children();
+                    if (childTokens.Count() > 1)
                     {
-                        if (sectionsToReplace.Last() == serilogValue)
+                        var sectionsToReplace = childTokens.Where(c => c["name"].Value<string>().Contains(replaceSectionName)).ToList();
+                        foreach (var serilogValue in sectionsToReplace)
                         {
-                            serilogValue.AddAfterSelf(newValues);
-                        }
+                            if (sectionsToReplace.Last() == serilogValue)
+                            {
+                                serilogValue.AddAfterSelf(newValues);
+                            }
 
-                        serilogValue.Remove();
-                    }
-                    if (sectionsToReplace.Count == 0)
-                    {
-                        jSection["value"].Children().Last().AddAfterSelf(newValues);
+                            serilogValue.Remove();
+                        }
+                        if (sectionsToReplace.Count == 0)
+                        {
+                            jSection["value"].Children().Last().AddAfterSelf(newValues);
+                        }
+                        return true;
                     }
                 }
                 else
                 {
                     jSection["value"].Children().Last().AddAfterSelf(newValues);
+                    return true;
                 }
-                return true;
             }
             return false;
         }
