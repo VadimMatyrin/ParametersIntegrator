@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace AppSettingParametersIntegrator.Utils
+namespace ParametersIntegrator.Utils
 {
     public static class SectionParser
     {

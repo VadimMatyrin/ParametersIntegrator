@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AppSettingParametersIntegrator.Services
+namespace ParametersIntegrator.Services
 {
     public class JsonAppSettingsSectionService : IJsonSectionService
     {

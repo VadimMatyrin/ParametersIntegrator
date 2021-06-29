@@ -1,10 +1,10 @@
-﻿using AppSettingParametersIntegrator.Utils;
+﻿using ParametersIntegrator.Utils;
 using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Linq;
 
-namespace AppSettingParametersIntegrator.Services
+namespace ParametersIntegrator.Services
 {
     public class AppSettingsParamIntegratorService : IParamIntegratorService
     {

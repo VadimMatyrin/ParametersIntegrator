@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
-namespace AppSettingParametersIntegrator.Services
+namespace ParametersIntegrator.Services
 {
     public interface IFileSearcherService
     {

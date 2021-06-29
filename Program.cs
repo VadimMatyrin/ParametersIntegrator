@@ -1,7 +1,7 @@
-﻿using AppSettingParametersIntegrator.Services;
+﻿using ParametersIntegrator.Services;
 using System;
 
-namespace AppSettingParametersIntegrator
+namespace ParametersIntegrator
 {
     class Program
     {

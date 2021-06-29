@@ -1,4 +1,4 @@
-﻿namespace AppSettingParametersIntegrator.Services
+﻿namespace ParametersIntegrator.Services
 {
     public interface IParamIntegratorService
     {

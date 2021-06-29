@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace AppSettingParametersIntegrator.Services
+namespace ParametersIntegrator.Services
 {
     public class FileSearcherService : IFileSearcherService
     {
