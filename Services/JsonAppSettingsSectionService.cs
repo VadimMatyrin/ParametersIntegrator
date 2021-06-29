@@ -38,10 +38,9 @@ namespace ParametersIntegrator.Services
             {
                 if (replaceSectionName != null)
                 {
-                    var childTokens = jSection["value"].Children();
-                    if (childTokens.Count() > 1)
+                    if (ShouldUpdateJson(jSection["value"]))
                     {
-                        var sectionsToReplace = childTokens.Where(c => c["name"].Value<string>().Contains(replaceSectionName)).ToList();
+                        var sectionsToReplace = jSection["value"].Where(c => c["name"].Value<string>().Contains(replaceSectionName)).ToList();
                         foreach (var serilogValue in sectionsToReplace)
                         {
                             if (sectionsToReplace.Last() == serilogValue)
@@ -70,6 +69,16 @@ namespace ParametersIntegrator.Services
         private bool IsTemplateFile(JObject json)
         {
             return json["resources"] != null;
+        }
+
+        private bool ShouldUpdateJson(JToken json)
+        {
+            var childTokens = json.Children();
+            if (childTokens.Count() > 1)
+            {
+                return childTokens.Any(t => t.SelectToken("name") != null && t.SelectToken("value") != null);
+            }
+            return false;
         }
 
     }
