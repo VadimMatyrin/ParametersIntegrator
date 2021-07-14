@@ -81,5 +81,9 @@ namespace ParametersIntegrator.Services
             return false;
         }
 
+        public bool ProcessJArray(JArray json)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

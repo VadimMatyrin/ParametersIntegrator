@@ -31,6 +31,17 @@ namespace ParametersIntegrator.Services
         }
 
 
+        public JArray GetJArrayFromFile(string filePath)
+        {
+            if (filePath is null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            var jArray = JArray.Parse(File.ReadAllText(filePath));
+            return jArray;
+        }
+
         public JObject GetJObjectFromFile(string filePath)
         {
             if (filePath is null)
@@ -38,8 +49,8 @@ namespace ParametersIntegrator.Services
                 throw new ArgumentNullException();
             }
 
-            var fileJObject = JObject.Parse(File.ReadAllText(filePath));
-            return fileJObject;
+            var jObject = JObject.Parse(File.ReadAllText(filePath));
+            return jObject;
         }
     }
 }

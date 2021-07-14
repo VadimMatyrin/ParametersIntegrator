@@ -6,5 +6,6 @@ namespace ParametersIntegrator.Services
     public interface IJsonSectionService
     {
         bool EditSection(JObject json, string sectionName, string replaceSectionName, List<JToken> newValues);
+        bool ProcessJArray(JArray json);
     }
 }

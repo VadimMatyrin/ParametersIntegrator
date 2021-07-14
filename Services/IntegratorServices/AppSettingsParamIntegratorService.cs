@@ -19,7 +19,7 @@ namespace ParametersIntegrator.Services
 
         public void ProcessDirectory(string folder, string replaceSectionName)
         {
-            var files = _fileSearcherService.GetMathingFiles(folder, @"deploy\\.+\.json");
+            var files = _fileSearcherService.GetMathingFiles(folder, @"deploy\\.+\.JSON");
 
             var newTokens = SectionParser.GetNewSectionsFromFile();
 
